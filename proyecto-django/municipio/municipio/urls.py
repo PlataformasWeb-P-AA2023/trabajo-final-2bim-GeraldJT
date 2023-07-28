@@ -22,6 +22,10 @@ from django.contrib.auth import views as auth_views
 
 from rest_framework import routers
 from locales import views
+# importar
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+# agregar el siguiente valor a la variable urlpatterns
 
 router = routers.DefaultRouter()
 router.register(r'personas', views.PersonaViewSet)
@@ -37,3 +41,4 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
 ]
+urlpatterns += staticfiles_urlpatterns()
