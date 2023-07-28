@@ -1,0 +1,15 @@
+{% extends "master1.html" %}
+
+{% block title %}
+  Lista de Barrio
+{% endblock %}
+
+{% block content %}
+<h2>Listado de Barrios</h3>
+  <h3>Número de Barrios {{ numero_barrios }}</h3>
+  
+  {% for b in barrios %}
+      
+  <p>{{b}} - [<a href="{% url 'editar_Barrio' b.id %}">editar</a>] - [<a href="{% url 'eliminar_Barrio' b.id %}">eliminar</a>] </p>
+  {% endfor %}
+  {% endblock %}

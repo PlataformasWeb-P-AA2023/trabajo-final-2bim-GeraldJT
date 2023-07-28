@@ -1,0 +1,17 @@
+{% extends "master1.html" %}
+
+{% block title %}
+  Lista de Persona
+{% endblock %}
+
+{% block content %}
+<h2>Listado de Personas</h3>
+  <h3>Número de Personas {{ numero_personas }}</h3>
+
+{% for p in personas %}
+ 
+<p>{{p}} - [<a href="{% url 'editar_Persona' p.id %}">editar</a>] - [<a href="{% url 'eliminar_Persona' p.id %}">eliminar</a>] </p>
+
+{% endfor %}
+
+{% endblock %}
