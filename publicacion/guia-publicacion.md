@@ -1,4 +1,4 @@
-#Paso 1:
+#Paso 1:#
 Lo primero a realizar es la instalacion de la libreria de gunicorn 
 #Paso 2: 
 Entramos al archivo settings.py y agregamosel siguiente valor dentro de ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1"] 
