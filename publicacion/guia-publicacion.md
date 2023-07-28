@@ -1,18 +1,18 @@
-# Paso 1:
+## Paso 1:
 Lo primero a realizar es la instalacion de la libreria de gunicorn 
-# Paso 2: 
+## Paso 2: 
 Entramos al archivo settings.py y agregamosel siguiente valor dentro de ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1"] 
-# Paso 3:
+## Paso 3:
 En el setting.py vamos a agregar lo siguiente STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
-# Paso 4:
+## Paso 4:
 Nos dirigimos al archivo urls.py y vamos a importar from django.contrib.staticfiles.urls import staticfiles_urlpatterns y vamos agregar el siiguiente valor urlpatterns += staticfiles_urlpatterns() 
-# Paso 5: 
+## Paso 5: 
 vamos a ir a la consola y vamos a ejecutar el comando python manage.py collectstatic 
-# Paso 6:
+## Paso 6:
 Para levantar el proyecto vamos a ejecutar el siguiente codigo: gunicorn --bind 0.0.0.0:8000 municipio.wsgi
-# Paso 7:
+## Paso 7:
 Una vez que comprobamos que se ha podido subir la pagina de forma correcta vamos a ingresar en consola el comando: sudo nano /etc/systemd/system/
-# Paso 8: 
+## Paso 8: 
 Al momento de entrar el documento va a estar vacio, lo que vamos a hacer copiar y reemplazar los datos de las variables del siguiente codigo:
 
 [Unit]
@@ -44,13 +44,13 @@ ExecStart=/home/oem/entornos/entorno02/bin//gunicorn --workers 3 --bind unix:app
  esta sección será usada para indicar que el servicio puede empezar cuando se inicie el sistema operativo. Se sugiere no cambiar el valor dado.
 WantedBy=multi-user.target
 
-# Paso 9:
+## Paso 9:
 vamos a iniciar el sistema a travez del comando: sudo systemctl start proyecto01
 
-# Paso 10:
+## Paso 10:
 por medio del comando: sudo systemctl enable proyecto01 vamos a ver el status
 
-# Paso 11:
+## Paso 11:
 verificamos que se haya creado el archivo application.pock
 
 #Paso 12: se realiza la instalacion de nginx
