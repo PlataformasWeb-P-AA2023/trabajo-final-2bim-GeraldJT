@@ -8,7 +8,7 @@ from . import views
 
 
 urlpatterns = [
-        path('local/Comida', views.index, name='index'),
+        path('', views.index, name='index'),
         path('local/Repuestos', views.indexR, name='indexR'),
         #Local Comida
         path('crear/LocalComida', views.crear_LocalComida,
